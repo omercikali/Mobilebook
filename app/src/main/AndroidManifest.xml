@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobilebookalpha">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/square"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/circle"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mobilebookalpha">
+        <activity android:name=".Info_page"></activity>
+        <activity android:name=".With_Phone_Number" />
+        <activity android:name=".Advantage_Damage_page" />
+        <activity android:name=".Fertilizier_page" />
+        <activity android:name=".Soldgoods_page" />
+        <activity android:name=".Workers_page" />
+        <activity android:name=".Forgat_pass" />
+        <activity
+            android:name=".With_google_sing_up"
+            android:parentActivityName=".Login_page" />
+        <activity
+            android:name=".Sing_up_page"
+            android:parentActivityName=".Login_page" />
+        <activity android:name=".Login_page" />
+        <activity android:name=".splash_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

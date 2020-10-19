@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/farmers"
+    tools:context=".Login_page">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="131dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="140dp"
+        android:backgroundTint="#2AF590"
+        android:outlineProvider="background"
+        android:rotationX="4"
+        android:text=" giriş yap"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgatmypass" />
+
+    <EditText
+        android:id="@+id/emailet"
+        android:layout_width="242dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:hint="e-posta adresinizi giriniz"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/passwordet"
+        android:layout_width="243dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:hint="şifrenizi giriniz"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailet" />
+
+    <TextView
+        android:id="@+id/uyedegilmisin"
+        android:layout_width="112dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="150dp"
+        android:background="#008B00FF"
+        android:gravity="center"
+        android:text="Üye değil misin ?"
+        android:textColor="#0E0D0D"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/withgooglebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="17dp"
+        android:backgroundTint="#2AF590"
+        android:onClick="withgoogle"
+        android:text="e-posta adresi ile kayıt ol"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/telefon_no_ile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#2AF590"
+        android:text="telefon numarası ile giriş yap"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/withgooglebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/forgatmypass"
+        android:layout_width="103dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="154dp"
+        android:text="şifremi unuttum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordet" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="183dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uyedegilmisin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
