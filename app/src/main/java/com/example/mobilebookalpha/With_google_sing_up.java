@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,7 +34,7 @@ public class With_google_sing_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_with_google_sing_up);
 
-        progressBar=findViewById(R.id.progressBar3);
+        progressBar = findViewById(R.id.progressBar3);
         progressBar.setVisibility(View.INVISIBLE);
         trypasswordet = findViewById(R.id.trypasswordet);
         enterbt = findViewById(R.id.button3);
@@ -81,8 +84,19 @@ public class With_google_sing_up extends AppCompatActivity {
                             overridePendingTransition(R.anim.anim_out, R.anim.anim_in);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "bu e-posta adresi kullanılıyor veya internetinizle ilgili bir sorun var", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.INVISIBLE);
+                            try {
+                                throw task.getException();
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
+                                Toast.makeText(getApplicationContext(), "lütfen geçerli bir e-posta formatı kullanınız", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.INVISIBLE);
+                            } catch (FirebaseAuthUserCollisionException e) {
+                                Toast.makeText(getApplicationContext(), "bu e-posta adresi kullanılıyor", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.INVISIBLE);
+                            } catch (Exception e) {
+                                Toast.makeText(getApplicationContext(), "beklenmedik bir hata oluştu", Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.INVISIBLE);
+                            }
+
                         }
                     }
 

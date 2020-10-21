@@ -24,11 +24,15 @@ import android.widget.Toast;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -72,7 +76,7 @@ public class Login_page extends AppCompatActivity {
                 if (!usernameStr.equals("")) {
                     singin(usernameStr, passwordStr);
 
-                } else { 
+                } else {
 
                     Toast.makeText(getApplicationContext(), "lütfen geçerli bir e-posta giriniz", Toast.LENGTH_LONG).show();
 
@@ -81,6 +85,7 @@ public class Login_page extends AppCompatActivity {
             }
         });
     }
+
     public void withgoogle(View view) {
 
         Intent intent = new Intent(Login_page.this, With_google_sing_up.class);
@@ -89,30 +94,43 @@ public class Login_page extends AppCompatActivity {
 
 
     }
+
     private void singin(String username, String password) {
 
 
         auth.signInWithEmailAndPassword(username, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+                    public void onSuccess(AuthResult authResult) {
+                        // Sign in success, update UI with the signed-in user's information
 
-                            Intent intent = new Intent(Login_page.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
-                            overridePendingTransition(R.anim.anim_in, R.anim.anim_out);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "telefon numarası veya şifre hatalı", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.INVISIBLE);
-                        }
+                        Intent intent = new Intent(Login_page.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                        overridePendingTransition(R.anim.anim_in, R.anim.anim_out);
                     }
-                });
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                try {
+                    throw e;
+                } catch (FirebaseAuthInvalidUserException exception) {
+                    Toast.makeText(getApplicationContext(), "bu e-posta kayıtlı değil", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.INVISIBLE);
+                } catch (FirebaseNetworkException exception) {
+                    Toast.makeText(getApplicationContext(), "İnternet bağlantınızı kontrol ediniz", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.INVISIBLE);
+                } catch (Exception exception) {
+                    Toast.makeText(getApplicationContext(), "telefon numarası veya şifre hatalı", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.INVISIBLE);
+                }
+
+            }
+        });
 
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
