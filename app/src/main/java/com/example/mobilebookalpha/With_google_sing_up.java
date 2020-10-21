@@ -39,7 +39,7 @@ public class With_google_sing_up extends AppCompatActivity {
         passwordet = findViewById(R.id.passwordEt);
         AlertDialog.Builder builder = new AlertDialog.Builder(With_google_sing_up.this);
         builder.setTitle("Mobildefter");
-        builder.setMessage("şifrenizi unutmanız riskinize karşılık geçerli bi google hesabı giriniz");
+        builder.setMessage("şifrenizi unutmanız riskinize karşılık kullanıdığınız bi google hesabı giriniz");
         builder.setPositiveButton("okudum anladım", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -81,7 +81,7 @@ public class With_google_sing_up extends AppCompatActivity {
                             overridePendingTransition(R.anim.anim_out, R.anim.anim_in);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "hesap oluşturulurken bir hata oluştu lütfen tekrar deneyiniz", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "bu e-posta adresi kullanılıyor veya internetinizle ilgili bir sorun var", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }

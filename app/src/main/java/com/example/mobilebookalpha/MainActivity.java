@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.widget.LoginButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -19,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageView logout,infoimg;
     private TextView workerstw, soldgoodtw, fertiliziertw, advantage_damagetw;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         infoimg=findViewById(R.id.Info_Tw);
         workerstw = findViewById(R.id.Workers_pageTw);

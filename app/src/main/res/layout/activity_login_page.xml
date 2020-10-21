@@ -7,18 +7,6 @@
     android:background="@drawable/farmers"
     tools:context=".Login_page">
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button_fb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="121dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="131dp"
@@ -72,11 +60,11 @@
         android:background="#008B00FF"
         android:gravity="center"
         android:text="Üye değil misin ?"
-        android:textColor="#0E0D0D"
+        android:textColor="#FFFEFE"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/withgooglebtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/withgooglebtn"
@@ -84,28 +72,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="84dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#2AF590"
         android:onClick="withgoogle"
         android:text="e-posta adresi ile kayıt ol"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/telefon_no_ile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="#2AF590"
-        android:text="telefon numarası ile giriş yap"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/withgooglebtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -126,10 +100,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="183dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uyedegilmisin" />
+        tools:layout_editor_absoluteY="412dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

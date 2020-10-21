@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobilebookalpha">
         <activity android:name=".Info_page"></activity>
-        <activity android:name=".With_Phone_Number" />
         <activity android:name=".Advantage_Damage_page" />
         <activity android:name=".Fertilizier_page" />
         <activity android:name=".Soldgoods_page" />
@@ -21,9 +20,6 @@
         <activity android:name=".Forgat_pass" />
         <activity
             android:name=".With_google_sing_up"
-            android:parentActivityName=".Login_page" />
-        <activity
-            android:name=".Sing_up_page"
             android:parentActivityName=".Login_page" />
         <activity android:name=".Login_page" />
         <activity android:name=".splash_screen">
