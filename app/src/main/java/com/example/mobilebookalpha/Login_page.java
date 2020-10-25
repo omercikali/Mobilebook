@@ -77,9 +77,9 @@ public class Login_page extends AppCompatActivity {
                     singin(usernameStr, passwordStr);
 
                 } else {
-
+                    
                     Toast.makeText(getApplicationContext(), "lütfen geçerli bir e-posta giriniz", Toast.LENGTH_LONG).show();
-
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
 
             }

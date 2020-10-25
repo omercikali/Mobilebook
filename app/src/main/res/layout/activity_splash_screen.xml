@@ -23,15 +23,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="135dp"
-        android:layout_height="38dp"
+        android:layout_width="151dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="128dp"
         android:layout_marginBottom="7dp"
         android:gravity="center"
         android:rotationX="33"
-        android:text="powered by Aide"
+        android:text="powered by "
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

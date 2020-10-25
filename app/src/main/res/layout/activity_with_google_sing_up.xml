@@ -12,52 +12,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="159dp"
+        android:layout_marginTop="34dp"
         android:text="kayıt ol"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trypasswordet" />
 
     <EditText
         android:id="@+id/emailEt"
-        android:layout_width="229dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="91dp"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="95dp"
         android:ems="10"
         android:hint="e-posta adresinizi giriniz"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/passwordEt"
-        android:layout_width="229dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="91dp"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="23dp"
         android:ems="10"
         android:hint="şifrenizi giriniz"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEt" />
 
     <EditText
         android:id="@+id/trypasswordet"
-        android:layout_width="229dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="91dp"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="29dp"
         android:ems="10"
         android:hint="tekrar şifrenizi giriniz"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
 
@@ -67,10 +59,8 @@
         android:layout_width="60dp"
         android:layout_height="54dp"
         android:layout_marginStart="175dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="176dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        android:layout_marginBottom="189dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
